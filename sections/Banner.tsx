@@ -16,7 +16,7 @@ export default function Banner(
   { imageDesktop, imageMobile, title, subtitle, button }: Props,
 ) {
   return (
-    <div>
+    <div class="relative">
       <picture class="inset-0 block max-w-[1420px] mx-auto">
         <source
           media="(max-width: 1029px)"

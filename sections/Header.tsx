@@ -31,8 +31,13 @@ export default function GetStarted({ logo, menu, button, social }: Props) {
           <ul class="flex text-[14px]">
             {menu.map((menu) => {
               return (
-                <li>
-                  <a href={menu.link} class="block px-5">{menu.text}</a>
+                <li class="hover:text-secondary">
+                  <a
+                    href={menu.link}
+                    class="block px-5 hover:text-secondary duration-150"
+                  >
+                    {menu.text}
+                  </a>
                 </li>
               );
             })}
@@ -43,7 +48,7 @@ export default function GetStarted({ logo, menu, button, social }: Props) {
             <li>
               <a
                 href={button.link}
-                class="block border-2 border-white mx-4 py-[9px] px-10 rounded-[8px] text-[15px]"
+                class="block border-2 border-white mx-4 py-[9px] px-10 rounded-[8px] text-[15px] hover:text-secondary hover:border-secondary duration-150"
               >
                 {button.text}
               </a>

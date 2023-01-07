@@ -9,10 +9,12 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
-import * as $$$0 from "./sections/Banner.tsx";
-import * as $$$1 from "./sections/Head.tsx";
-import * as $$$2 from "./sections/Header.tsx";
-import * as $$$3 from "./sections/QuillText.tsx";
+import * as $$$0 from "./sections/AboutUs.tsx";
+import * as $$$1 from "./sections/Banner.tsx";
+import * as $$$2 from "./sections/Head.tsx";
+import * as $$$3 from "./sections/Header.tsx";
+import * as $$$4 from "./sections/MediaCarousel.tsx";
+import * as $$$5 from "./sections/QuillText.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -24,13 +26,87 @@ const manifest: DecoManifest = {
   },
   islands: { "./islands/LiveControls.tsx": $$0 },
   sections: {
-    "./sections/Banner.tsx": $$$0,
-    "./sections/Head.tsx": $$$1,
-    "./sections/Header.tsx": $$$2,
-    "./sections/QuillText.tsx": $$$3,
+    "./sections/AboutUs.tsx": $$$0,
+    "./sections/Banner.tsx": $$$1,
+    "./sections/Head.tsx": $$$2,
+    "./sections/Header.tsx": $$$3,
+    "./sections/MediaCarousel.tsx": $$$4,
+    "./sections/QuillText.tsx": $$$5,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
+    "./sections/AboutUs.tsx": {
+      "inputSchema": {
+        "title": " About Us",
+        "type": "object",
+        "properties": {
+          "image": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Image",
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "text": {
+            "format": "html",
+            "type": "string",
+            "title": "Text",
+          },
+          "button": {
+            "title": "Button",
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "title": "Link",
+              },
+              "text": {
+                "type": "string",
+                "title": "Text",
+              },
+            },
+            "required": [
+              "link",
+              "text",
+            ],
+          },
+          "feedback": {
+            "title": "Feedback",
+            "type": "object",
+            "properties": {
+              "image": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Image",
+              },
+              "text": {
+                "type": "string",
+                "title": "Text",
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+              },
+            },
+            "required": [
+              "image",
+              "text",
+              "name",
+            ],
+          },
+        },
+        "required": [
+          "image",
+          "title",
+          "text",
+          "button",
+          "feedback",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/Banner.tsx": {
       "inputSchema": {
         "title": " Banner",
@@ -223,6 +299,45 @@ const manifest: DecoManifest = {
           "menu",
           "button",
           "social",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/MediaCarousel.tsx": {
+      "inputSchema": {
+        "title": " Media Carousel",
+        "type": "object",
+        "properties": {
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "image",
+                "link",
+              ],
+            },
+            "title": "Media",
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+          },
+        },
+        "required": [
+          "media",
+          "text",
         ],
       },
       "outputSchema": null,

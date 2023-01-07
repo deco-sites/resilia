@@ -1,5 +1,8 @@
 /** @type {import('$fresh/plugins/twind').Options} */
 export default {
+  plugins: {
+    "shadow": { "box-shadow": "0px 4px 24px -4px rgb(0 0 0 / 24%)" },
+  },
   theme: {
     extend: {
       screens: {
