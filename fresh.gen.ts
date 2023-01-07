@@ -9,9 +9,9 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
-import * as $$$0 from "./sections/GetStarted.tsx";
+import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/Head.tsx";
-import * as $$$2 from "./sections/Markdown.tsx";
+import * as $$$2 from "./sections/Header.tsx";
 import * as $$$3 from "./sections/QuillText.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
@@ -24,27 +24,63 @@ const manifest: DecoManifest = {
   },
   islands: { "./islands/LiveControls.tsx": $$0 },
   sections: {
-    "./sections/GetStarted.tsx": $$$0,
+    "./sections/Banner.tsx": $$$0,
     "./sections/Head.tsx": $$$1,
-    "./sections/Markdown.tsx": $$$2,
+    "./sections/Header.tsx": $$$2,
     "./sections/QuillText.tsx": $$$3,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
-    "./sections/GetStarted.tsx": {
+    "./sections/Banner.tsx": {
       "inputSchema": {
-        "title": " Get Started",
+        "title": " Banner",
         "type": "object",
         "properties": {
-          "enableInspectVSCode": {
-            "type": [
-              "boolean",
-              "null",
+          "imageDesktop": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Image Desktop",
+          },
+          "imageMobile": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Image Mobile",
+          },
+          "title": {
+            "format": "html",
+            "type": "string",
+            "title": "Title",
+          },
+          "subtitle": {
+            "type": "string",
+            "title": "Subtitle",
+          },
+          "button": {
+            "title": "Button",
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "title": "Text",
+              },
+              "link": {
+                "type": "string",
+                "title": "Link",
+              },
+            },
+            "required": [
+              "text",
+              "link",
             ],
-            "title": "Enable Inspect V S Code",
           },
         },
-        "required": [],
+        "required": [
+          "imageDesktop",
+          "imageMobile",
+          "title",
+          "subtitle",
+          "button",
+        ],
       },
       "outputSchema": null,
     },
@@ -97,20 +133,96 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/Markdown.tsx": {
+    "./sections/Header.tsx": {
       "inputSchema": {
-        "title": " Markdown",
+        "title": " Header",
         "type": "object",
         "properties": {
-          "text": {
-            "$id": "5b1cd5713a375e18bb93e9635b8a2dc5fc2672cf",
-            "format": "live-function",
-            "type": "string",
-            "title": "Text",
+          "logo": {
+            "title": "Logo",
+            "type": "object",
+            "properties": {
+              "image": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Image",
+              },
+              "altText": {
+                "type": "string",
+                "title": "Alt Text",
+              },
+            },
+            "required": [
+              "image",
+              "altText",
+            ],
+          },
+          "menu": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "text",
+                "link",
+              ],
+            },
+            "title": "Menu",
+          },
+          "button": {
+            "title": "Button",
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "title": "Text",
+              },
+              "link": {
+                "type": "string",
+                "title": "Link",
+              },
+            },
+            "required": [
+              "text",
+              "link",
+            ],
+          },
+          "social": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "title": "Image",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "image",
+                "link",
+              ],
+            },
+            "title": "Social",
           },
         },
         "required": [
-          "text",
+          "logo",
+          "menu",
+          "button",
+          "social",
         ],
       },
       "outputSchema": null,

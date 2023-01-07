@@ -1,0 +1,8 @@
+.main-title p{
+    text-align: center;
+}
+
+.main-title strong{
+    color: #FFD000;
+    font-weight: 600;
+}
