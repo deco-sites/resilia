@@ -6,6 +6,7 @@ import type { HTML } from "$live/std/ui/types/HTML.ts";
 
 import Image from "$live/std/ui/components/Image.tsx";
 import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
+import LinkButton from "../components/LinkButton.tsx";
 
 export interface Props {
   title: HTML;
@@ -45,12 +46,7 @@ export default function PartnersList({ title, company, button }: Props) {
         </div>
         <Slider id={id} items={company.length} delay={2 * 1000} />
         <div class="flex justify-center">
-          <a
-            href={button.link}
-            class="block py-[21px] rounded-[8px] border-secondary border-1 w-full max-w-[270px] bg-secondary text-center hover:bg-white hover:text-secondary duration-500 mt-8 font-semibold"
-          >
-            {button.text}
-          </a>
+          <LinkButton text={button.text} link={button.link} mode="yellow" />
         </div>
       </div>
     </div>

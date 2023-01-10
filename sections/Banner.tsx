@@ -3,6 +3,7 @@ import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 
 import QuillText from "$start/sections/QuillText.tsx";
 import type { HTML } from "$live/std/ui/types/HTML.ts";
+import LinkButton from "../components/LinkButton.tsx";
 
 export interface Props {
   imageDesktop: LiveImage;
@@ -42,13 +43,8 @@ export default function Banner(
           <p class="text-3xl text-primary text-[18px] max-w-[650px] text-center mx-auto">
             {subtitle}
           </p>
-          <div class="inline-flex flex-col lg:flex-row">
-            <a
-              href={button.link}
-              class="w-full max-w-[270px] bg-secondary text-primary-light mt-8 py-[21px] mx-auto text-center rounded-[8px]"
-            >
-              {button.text}
-            </a>
+          <div class="inline-flex flex-col items-center justify-center lg:flex-row">
+            <LinkButton text={button.text} link={button.link} mode="yellow" />
           </div>
         </div>
       </div>

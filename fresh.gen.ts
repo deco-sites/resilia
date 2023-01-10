@@ -12,12 +12,14 @@ import * as $$0 from "./islands/LiveControls.tsx";
 import * as $$1 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/AboutUs.tsx";
 import * as $$$1 from "./sections/Banner.tsx";
-import * as $$$2 from "./sections/Head.tsx";
-import * as $$$3 from "./sections/Header.tsx";
-import * as $$$4 from "./sections/MediaCarousel.tsx";
-import * as $$$5 from "./sections/PartnersList.tsx";
-import * as $$$6 from "./sections/PartnersSections.tsx";
-import * as $$$7 from "./sections/QuillText.tsx";
+import * as $$$2 from "./sections/Feedbacks.tsx";
+import * as $$$3 from "./sections/Head.tsx";
+import * as $$$4 from "./sections/Header.tsx";
+import * as $$$5 from "./sections/MediaCarousel.tsx";
+import * as $$$6 from "./sections/OurServices.tsx";
+import * as $$$7 from "./sections/PartnersList.tsx";
+import * as $$$8 from "./sections/PartnersSections.tsx";
+import * as $$$9 from "./sections/QuillText.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -31,12 +33,14 @@ const manifest: DecoManifest = {
   sections: {
     "./sections/AboutUs.tsx": $$$0,
     "./sections/Banner.tsx": $$$1,
-    "./sections/Head.tsx": $$$2,
-    "./sections/Header.tsx": $$$3,
-    "./sections/MediaCarousel.tsx": $$$4,
-    "./sections/PartnersList.tsx": $$$5,
-    "./sections/PartnersSections.tsx": $$$6,
-    "./sections/QuillText.tsx": $$$7,
+    "./sections/Feedbacks.tsx": $$$2,
+    "./sections/Head.tsx": $$$3,
+    "./sections/Header.tsx": $$$4,
+    "./sections/MediaCarousel.tsx": $$$5,
+    "./sections/OurServices.tsx": $$$6,
+    "./sections/PartnersList.tsx": $$$7,
+    "./sections/PartnersSections.tsx": $$$8,
+    "./sections/QuillText.tsx": $$$9,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
@@ -161,6 +165,60 @@ const manifest: DecoManifest = {
           "title",
           "subtitle",
           "button",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Feedbacks.tsx": {
+      "inputSchema": {
+        "title": " Feedbacks",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "subTitle": {
+            "type": "string",
+            "title": "Sub Title",
+          },
+          "feedback": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Name",
+                },
+                "role": {
+                  "type": "string",
+                  "title": "Role",
+                },
+              },
+              "required": [
+                "image",
+                "text",
+                "name",
+                "role",
+              ],
+            },
+            "title": "Feedback",
+          },
+        },
+        "required": [
+          "title",
+          "subTitle",
+          "feedback",
         ],
       },
       "outputSchema": null,
@@ -343,6 +401,53 @@ const manifest: DecoManifest = {
         "required": [
           "media",
           "text",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/OurServices.tsx": {
+      "inputSchema": {
+        "title": " Our Services",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "text": {
+            "format": "html",
+            "type": "string",
+            "title": "Text",
+          },
+          "button": {
+            "title": "Button",
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "title": "Text",
+              },
+              "link": {
+                "type": "string",
+                "title": "Link",
+              },
+            },
+            "required": [
+              "text",
+              "link",
+            ],
+          },
+          "image": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Image",
+          },
+        },
+        "required": [
+          "title",
+          "text",
+          "button",
+          "image",
         ],
       },
       "outputSchema": null,

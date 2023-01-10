@@ -2,6 +2,7 @@
 export default {
   plugins: {
     "shadow": { "box-shadow": "0px 4px 24px -4px rgb(0 0 0 / 24%)" },
+    "shadow-light": { "box-shadow": "0px 0px 14px rgb(0 0 0 / 8%)" },
   },
   theme: {
     extend: {

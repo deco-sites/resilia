@@ -1,5 +1,6 @@
 import QuillText from "$start/sections/QuillText.tsx";
 import type { HTML } from "$live/std/ui/types/HTML.ts";
+import LinkButton from "../components/LinkButton.tsx";
 
 export interface Props {
   title: string;
@@ -23,12 +24,7 @@ export default function PartnersSections(
             <div class="mt-4">
               <QuillText html={text} />
             </div>
-            <a
-              href={button.link}
-              class="block border-primary border-1 bg-primary text-white font-bold text-center mt-8 w-[270px] py-[21px] rounded-[8px] hover:bg-secondary hover:text-primary font-medium duration-500"
-            >
-              {button.text}
-            </a>
+            <LinkButton text={button.text} link={button.link} mode="black" />
           </div>
           <div class="flex gap-6 flex-wrap justify-end relative">
             <div class="bg-white w-[402px] h-[402px] absolute rounded-1/2 right-16 top-14">

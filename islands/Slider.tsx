@@ -21,19 +21,22 @@ interface Props {
   items: number;
   delay?: number;
   id: string;
+  autoTransition?: boolean;
 }
 
-function Slider({ id, items, delay = 2_000 }: Props) {
+function Slider({ id, items, delay = 2_000, autoTransition = true }: Props) {
   const [index, setIndex] = useState(0);
 
   // Timer
-  useEffect(() => {
-    const id = setInterval(() => setIndex((index + 1) % items), delay);
+  if (autoTransition) {
+    useEffect(() => {
+      const id = setInterval(() => setIndex((index + 1) % items), delay);
 
-    return () => {
-      clearInterval(id);
-    };
-  }, [index, delay, items]);
+      return () => {
+        clearInterval(id);
+      };
+    }, [index, delay, items]);
+  }
 
   // Focus the right content
   useEffect(() => {
@@ -46,7 +49,8 @@ function Slider({ id, items, delay = 2_000 }: Props) {
     const firstElement = content.querySelector("div") as HTMLElement;
 
     if (content) {
-      content.appendChild(firstElement);
+      //content.appendChild(firstElement);
+      content.style.transform = `translateX(-${(100 / items) * index}%)`;
     }
   }, [index]);
 
@@ -82,6 +86,7 @@ function Slider({ id, items, delay = 2_000 }: Props) {
     const listeners: Array<() => void> = [];
 
     dots.forEach((dot, index) => {
+      console.log("teste");
       const set = () => setIndex(index);
 
       listeners.push(set);
