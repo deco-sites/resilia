@@ -1,7 +1,7 @@
 import Slider from "../islands/Slider.tsx";
 import { useId } from "preact/hooks";
 
-import QuillText from "$start/sections/QuillText.tsx";
+import QuillText from "$live/std/ui/components/QuillText.tsx";
 import type { HTML } from "$live/std/ui/types/HTML.ts";
 
 import Image from "$live/std/ui/components/Image.tsx";

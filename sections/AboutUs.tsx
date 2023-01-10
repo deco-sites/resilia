@@ -1,7 +1,7 @@
 import Image from "$live/std/ui/components/Image.tsx";
 import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 
-import QuillText from "$start/sections/QuillText.tsx";
+import QuillText from "$live/std/ui/components/QuillText.tsx";
 import type { HTML } from "$live/std/ui/types/HTML.ts";
 import LinkButton from "../components/LinkButton.tsx";
 
