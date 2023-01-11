@@ -18,8 +18,8 @@ export default function PartnersList({ title, company, button }: Props) {
   const id = useId();
   return (
     <div>
-      <div class="mx-[130px] bg-white shadow rounded-[24px] py-14 mt-[-100px]">
-        <div class="mb-6 text-[20px]">
+      <div class="mx-6 md:mx-[130px] bg-white shadow rounded-[24px] py-14 mt-[-100px]">
+        <div class="mb-6 text-[18px] md:text-[20px]">
           <QuillText html={title} />
         </div>
         <div
