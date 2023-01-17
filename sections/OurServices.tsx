@@ -15,7 +15,7 @@ export interface Props {
 export default function OurServices({ title, text, button, image }: Props) {
   return (
     <div class="bg-secondary flex mx-6 py-32 rounded-[32px]">
-      <div class="max-w-[1140px] flex m-auto">
+      <div class="max-w-[1140px] flex flex-wrap m-auto">
         <div class="w-full max-w-[470px]">
           <span class="text-gray-dark font-semibold text-[12px] tracking-[1px]">
             Nossos serviços

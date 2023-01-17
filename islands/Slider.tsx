@@ -21,16 +21,23 @@ interface Props {
   items: number;
   delay?: number;
   id: string;
+  itemsPerPageDesktop: number;
+  itemsPerPageMobile: number;
   autoTransition?: boolean;
 }
 
-function Slider({ id, items, delay = 2_000, autoTransition = true }: Props) {
+function Slider({ id, items, delay = 2000, autoTransition = true, itemsPerPageDesktop = 1, itemsPerPageMobile = 1 }: Props) {
   const [index, setIndex] = useState(0);
 
   // Timer
   if (autoTransition) {
     useEffect(() => {
-      const id = setInterval(() => setIndex((index + 1) % items), delay);
+
+      if(window.innerWidth < 768){
+        const id = setInterval(() => setIndex(items - index > itemsPerPageMobile ? (index + 1) : 0 ), delay);
+      }else{
+        const id = setInterval(() => setIndex(items - index > itemsPerPageDesktop ? (index + 1) : 0 ), delay);
+      }
 
       return () => {
         clearInterval(id);
@@ -43,8 +50,6 @@ function Slider({ id, items, delay = 2_000, autoTransition = true }: Props) {
     const content = document.getElementById(id)?.querySelector(
       "[data-slider-content]",
     ) as HTMLDivElement;
-
-    console.log(id);
 
     const firstElement = content.querySelector("div") as HTMLElement;
 

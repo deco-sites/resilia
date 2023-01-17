@@ -1,13 +1,22 @@
-.main-title p{
-    text-align: center;
+.main-title p {
+  text-align: center;
 }
 
-.main-title strong{
-    color: #FFD000;
-    font-weight: 600;
+.main-title strong {
+  color: #ffd000;
+  font-weight: 600;
 }
 
-.ql-editor{
-    padding: 0px !important;
-    line-height: 1 !important;
+.ql-editor {
+  padding: 0px !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
 }

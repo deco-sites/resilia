@@ -37,7 +37,7 @@ export default function Banner(
       </picture>
       <div class="h-full w-full absolute text-secondary top-0">
         <div class="flex flex-col justify-center h-full w-full max-w-screen-xl m-auto px-5">
-          <div class="main-title mx-auto tracking-[-2px] max-w-[345px] text-primary text-center font-bold text-[40px] md:text-[57px]">
+          <div class="main-title mx-auto tracking-[-2px] max-w-[345px] md:max-w-full md:mb-2 text-primary text-center font-bold text-[40px] md:text-[57px]">
             <QuillText html={title} />
           </div>
           <p class="text-[16px] text-primary md:text-[18px] max-w-[345px] md:max-w-[650px] text-center mx-auto mt-2.5 md:mt-0">

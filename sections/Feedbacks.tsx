@@ -19,7 +19,7 @@ export default function Feedback({ title, subTitle, feedback }: Props) {
   let id = useId();
   id += "feedback";
   return (
-    <div class="mt-28 mb-28 relative pb-14">
+    <div class="mt-28 mb-24 relative">
       <h2 class="font-bold text-4xl text-center">{title}</h2>
       <p class="text-primary-light text-center">{subTitle}</p>
       <div
