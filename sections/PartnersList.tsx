@@ -27,7 +27,9 @@ export default function PartnersList({ title, company, button }: Props) {
           class=" max-w-[1140px] m-auto px-4 relative w-full overflow-hidden"
         >
           <div
-            class={`flex justify-between transition w-[${company.length * 100}%] md:w-[${company.length * 20}%]`}
+            class={`flex justify-between transition w-[${
+              company.length * 100
+            }%] md:w-[${company.length * 20}%]`}
             data-slider-content
           >
             {company.map((company, idx) => {
@@ -43,14 +45,14 @@ export default function PartnersList({ title, company, button }: Props) {
           </div>
         </div>
         <Slider
-        id={id}
-        items={company.length}
-        itemsPerPageDesktop={5}
-        itemsPerPageMobile={1}
-        delay={2 * 1000}
-        autoTransition={true}
-      />
-        
+          id={id}
+          items={company.length}
+          itemsPerPageDesktop={5}
+          itemsPerPageMobile={1}
+          delay={2 * 1000}
+          autoTransition={true}
+        />
+
         <div class="flex justify-center max-w-[270px] m-auto">
           <LinkButton text={button.text} link={button.link} mode="yellow" />
         </div>

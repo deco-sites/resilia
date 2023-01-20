@@ -26,17 +26,31 @@ interface Props {
   autoTransition?: boolean;
 }
 
-function Slider({ id, items, delay = 2000, autoTransition = true, itemsPerPageDesktop = 1, itemsPerPageMobile = 1 }: Props) {
+function Slider(
+  {
+    id,
+    items,
+    delay = 2000,
+    autoTransition = true,
+    itemsPerPageDesktop = 1,
+    itemsPerPageMobile = 1,
+  }: Props,
+) {
   const [index, setIndex] = useState(0);
 
   // Timer
   if (autoTransition) {
     useEffect(() => {
-
-      if(window.innerWidth < 768){
-        const id = setInterval(() => setIndex(items - index > itemsPerPageMobile ? (index + 1) : 0 ), delay);
-      }else{
-        const id = setInterval(() => setIndex(items - index > itemsPerPageDesktop ? (index + 1) : 0 ), delay);
+      if (window.innerWidth < 768) {
+        const id = setInterval(
+          () => setIndex(items - index > itemsPerPageMobile ? (index + 1) : 0),
+          delay,
+        );
+      } else {
+        const id = setInterval(
+          () => setIndex(items - index > itemsPerPageDesktop ? (index + 1) : 0),
+          delay,
+        );
       }
 
       return () => {
@@ -54,7 +68,6 @@ function Slider({ id, items, delay = 2000, autoTransition = true, itemsPerPageDe
     const firstElement = content.querySelector("div") as HTMLElement;
 
     if (content) {
-      //content.appendChild(firstElement);
       content.style.transform = `translateX(-${(100 / items) * index}%)`;
     }
   }, [index]);

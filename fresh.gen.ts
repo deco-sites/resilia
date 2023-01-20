@@ -13,13 +13,15 @@ import * as $$1 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/AboutUs.tsx";
 import * as $$$1 from "./sections/Banner.tsx";
 import * as $$$2 from "./sections/Feedbacks.tsx";
-import * as $$$3 from "./sections/Head.tsx";
-import * as $$$4 from "./sections/Header.tsx";
-import * as $$$5 from "./sections/MediaCarousel.tsx";
-import * as $$$6 from "./sections/OurServices.tsx";
-import * as $$$7 from "./sections/PartnersList.tsx";
-import * as $$$8 from "./sections/PartnersSections.tsx";
-import * as $$$9 from "./sections/QuillText.tsx";
+import * as $$$3 from "./sections/Footer.tsx";
+import * as $$$4 from "./sections/Head.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/MediaCarousel.tsx";
+import * as $$$7 from "./sections/Newsletter.tsx";
+import * as $$$8 from "./sections/OurServices.tsx";
+import * as $$$9 from "./sections/PartnersList.tsx";
+import * as $$$10 from "./sections/PartnersSections.tsx";
+import * as $$$11 from "./sections/QuillText.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -34,13 +36,15 @@ const manifest: DecoManifest = {
     "./sections/AboutUs.tsx": $$$0,
     "./sections/Banner.tsx": $$$1,
     "./sections/Feedbacks.tsx": $$$2,
-    "./sections/Head.tsx": $$$3,
-    "./sections/Header.tsx": $$$4,
-    "./sections/MediaCarousel.tsx": $$$5,
-    "./sections/OurServices.tsx": $$$6,
-    "./sections/PartnersList.tsx": $$$7,
-    "./sections/PartnersSections.tsx": $$$8,
-    "./sections/QuillText.tsx": $$$9,
+    "./sections/Footer.tsx": $$$3,
+    "./sections/Head.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/MediaCarousel.tsx": $$$6,
+    "./sections/Newsletter.tsx": $$$7,
+    "./sections/OurServices.tsx": $$$8,
+    "./sections/PartnersList.tsx": $$$9,
+    "./sections/PartnersSections.tsx": $$$10,
+    "./sections/QuillText.tsx": $$$11,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
@@ -223,6 +227,102 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/Footer.tsx": {
+      "inputSchema": {
+        "title": " Footer",
+        "type": "object",
+        "properties": {
+          "logo": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Logo",
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+          },
+          "menu": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                },
+                "link": {
+                  "type": [
+                    "string",
+                    "null",
+                  ],
+                  "title": "Link",
+                },
+                "submenu": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "title": "Title",
+                      },
+                      "link": {
+                        "type": [
+                          "string",
+                          "null",
+                        ],
+                        "title": "Link",
+                      },
+                    },
+                    "required": [
+                      "title",
+                    ],
+                  },
+                  "title": "Submenu",
+                },
+              },
+              "required": [
+                "title",
+              ],
+            },
+            "title": "Menu",
+          },
+          "social": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string",
+                  "title": "Image",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "image",
+                "link",
+              ],
+            },
+            "title": "Social",
+          },
+          "reservedRights": {
+            "type": "string",
+            "title": "Reserved Rights",
+          },
+        },
+        "required": [
+          "logo",
+          "text",
+          "menu",
+          "social",
+          "reservedRights",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/Head.tsx": {
       "inputSchema": {
         "title": " Head",
@@ -401,6 +501,32 @@ const manifest: DecoManifest = {
         "required": [
           "media",
           "text",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Newsletter.tsx": {
+      "inputSchema": {
+        "title": " Newsletter",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+          },
+          "textButton": {
+            "type": "string",
+            "title": "Text Button",
+          },
+        },
+        "required": [
+          "title",
+          "text",
+          "textButton",
         ],
       },
       "outputSchema": null,

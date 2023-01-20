@@ -61,7 +61,8 @@ export default function GetStarted({ logo, menu, button, social }: Props) {
                       <div
                         class="w-4"
                         dangerouslySetInnerHTML={{ __html: social.image }}
-                      ></div>
+                      >
+                      </div>
                     </picture>
                   </a>
                 </li>
@@ -81,7 +82,8 @@ export default function GetStarted({ logo, menu, button, social }: Props) {
               <path
                 d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z"
                 fill="white"
-              ></path>
+              >
+              </path>
             </svg>
           </summary>
           <nav class="block md:hidden fixed w-[100vw] left-0 right-0 bg-black z-10 top-[68px]">

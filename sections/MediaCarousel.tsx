@@ -14,16 +14,22 @@ export default function MediaCarousel({ media, text }: Props) {
   id += "media-query";
 
   return (
-    <div id={id}
-    class="max-w-[1140px] m-auto px-4 relative w-full overflow-hidden mb-20">
+    <div
+      id={id}
+      class="max-w-[1140px] m-auto px-4 relative w-full overflow-hidden mb-20"
+    >
       <div
-        class={`flex justify-between transition w-[${media.length * 100}%] md:w-[${media.length * 20}%]`}
+        class={`flex justify-between transition w-[${
+          media.length * 100
+        }%] md:w-[${media.length * 20}%]`}
         data-slider-content
       >
-        {media.map((media,idx ) => {
+        {media.map((media, idx) => {
           return (
-            <div id={`${id}-${idx}`}
-            class="w-[100%] md:w-[20%] rounded-[32px] mx-5 p-8">
+            <div
+              id={`${id}-${idx}`}
+              class="w-[100%] md:w-[20%] rounded-[32px] mx-5 p-8"
+            >
               <a href={media.link} class="block opacity-40 flex justify-center">
                 <img
                   src={media.image}
