@@ -20,7 +20,9 @@ export default function OurServices({ title, text, button, image }: Props) {
           <span class="text-gray-dark font-semibold text-[12px] tracking-[1px]">
             Nossos serviços
           </span>
-          <h2 class="font-bold text-[32px] md:text-[42px] leading-[100%] mt-4">{title}</h2>
+          <h2 class="font-bold text-[32px] md:text-[42px] leading-[100%] mt-4">
+            {title}
+          </h2>
           <div class="mt-4">
             <QuillText html={text} />
           </div>

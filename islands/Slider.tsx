@@ -41,18 +41,12 @@ function Slider(
   // Timer
   if (autoTransition) {
     useEffect(() => {
+      let id
       if (window.innerWidth < 768) {
-        const id = setInterval(
-          () => setIndex(items - index > itemsPerPageMobile ? (index + 1) : 0),
-          delay,
-        );
+        id = setInterval(() => setIndex(items - index > itemsPerPageMobile ? (index + 1) : 0), delay);
       } else {
-        const id = setInterval(
-          () => setIndex(items - index > itemsPerPageDesktop ? (index + 1) : 0),
-          delay,
-        );
+        id = setInterval(() => setIndex(items - index > itemsPerPageDesktop ? (index + 1) : 0), delay);
       }
-
       return () => {
         clearInterval(id);
       };
