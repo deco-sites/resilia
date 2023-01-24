@@ -38,8 +38,8 @@ function Slider(
 ) {
   const [index, setIndex] = useState(0);
 
-  // Timer
   if (autoTransition) {
+    // Timer
     useEffect(() => {
       let id
       if (window.innerWidth < 768) {
@@ -51,6 +51,21 @@ function Slider(
         clearInterval(id);
       };
     }, [index, delay, items]);
+
+    // Create clones
+    useEffect(() => {
+      const content = document.getElementById(id)?.querySelector(
+        "[data-slider-content]",
+      ) as HTMLDivElement;
+
+      let elements = content.querySelectorAll("div")
+
+      elements.forEach(element => {
+        let newElement = element.cloneNode(true)
+        newElement.classList.add("active")
+        content.appendChild(newElement)
+      })
+    },[])
   }
 
   // Focus the right content
@@ -98,7 +113,6 @@ function Slider(
     const listeners: Array<() => void> = [];
 
     dots.forEach((dot, index) => {
-      console.log("teste");
       const set = () => setIndex(index);
 
       listeners.push(set);

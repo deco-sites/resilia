@@ -20,8 +20,8 @@ export default function MediaCarousel({ media, text }: Props) {
     >
       <div
         class={`flex justify-between transition w-[${
-          media.length * 100
-        }%] md:w-[${media.length * 20}%]`}
+          media.length * 2 * 100
+        }%] md:w-[${media.length * 2 * 20}%]`}
         data-slider-content
       >
         {media.map((media, idx) => {
@@ -44,7 +44,7 @@ export default function MediaCarousel({ media, text }: Props) {
       <p class="text-center text-gray mt-6">{text}</p>
       <Slider
         id={id}
-        items={media.length}
+        items={media.length * 2}
         itemsPerPageDesktop={5}
         itemsPerPageMobile={1}
         delay={2 * 1000}

@@ -28,8 +28,8 @@ export default function PartnersList({ title, company, button }: Props) {
         >
           <div
             class={`flex justify-between transition w-[${
-              company.length * 100
-            }%] md:w-[${company.length * 20}%]`}
+              company.length * 2 * 100
+            }%] md:w-[${company.length * 2 * 20}%]`}
             data-slider-content
           >
             {company.map((company, idx) => {
@@ -46,7 +46,7 @@ export default function PartnersList({ title, company, button }: Props) {
         </div>
         <Slider
           id={id}
-          items={company.length}
+          items={company.length * 2}
           itemsPerPageDesktop={5}
           itemsPerPageMobile={1}
           delay={2 * 1000}
